@@ -1,0 +1,6 @@
+services:
+  web:
+    image: nginx:stable-alpine
+    volumes:
+      - laravel-app-code:/var/www:ro
+      - ./_docker/vhost.conf:/etc/nginx/conf.d/default.conf:ro
