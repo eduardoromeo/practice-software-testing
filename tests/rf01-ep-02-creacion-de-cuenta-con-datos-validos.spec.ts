@@ -23,5 +23,5 @@ test.describe('RF01-EP-02 · Creación de cuenta con datos válidos', () => {
     await expect(page).toHaveURL(/\/auth\/login/);
     await expect(page.locator('[data-test="login-form"]')).toBeVisible();
   });
-
+  
 });
