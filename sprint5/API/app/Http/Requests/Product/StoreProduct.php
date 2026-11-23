@@ -27,9 +27,9 @@ class StoreProduct extends BaseFormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:120', new SubscriptSuperscriptRule()],
+            'name' => ['required', 'string', 'max:120', 'unique:products,name', new SubscriptSuperscriptRule()],
             'description' => ['string', 'max:1250', new SubscriptSuperscriptRule()],
-            'price' => 'numeric|required',
+            'price' => 'numeric|required|min:0',
             'category_id' => 'required',
             'brand_id' => 'required',
             'is_location_offer' => 'required|boolean',

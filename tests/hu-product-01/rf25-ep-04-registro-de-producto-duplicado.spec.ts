@@ -1,12 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
-  ADMIN, API_URL, CLIENTE, Limpieza, URL_CATEGORIAS, URL_PRODUCTOS, abrirAltaCategoria, abrirAltaProducto,
-  abrirEdicionCategoria, abrirEdicionProducto, anotar, buscarCategoria, buscarProducto, categoriaDeApi,
-  categoriaPorNombre, categoriasDeApi, cerrarSesion, eliminarCategoriaEnLista, eliminarProductoEnLista,
-  filaCategoria, filaProducto, guardarCategoria, guardarProducto, iniciarSesion, irACategorias, irAProductos,
-  limpiarBusquedaCategoria, llenarCategoria, llenarProducto, nombreQa, nombresDeCategorias, productoDeApi,
-  productoPorNombre, slugDe, tokenDe, uniq, vigilarErrores5xx,
-} from '../../../support/admin';
+  Limpieza, abrirAltaProducto, anotar, guardarProducto, iniciarSesion, llenarProducto, nombreQa,
+  productoPorNombre, uniq,
+} from '../support/admin';
 
 // HU-25 · RF25-EP-04: Registro de producto duplicado
 // Caso de Jira: RF25-TC-04. Criterios: CA-25.1, CA-25.2.

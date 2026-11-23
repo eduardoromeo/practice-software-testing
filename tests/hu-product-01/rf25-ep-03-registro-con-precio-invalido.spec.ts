@@ -1,12 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
-  ADMIN, API_URL, CLIENTE, Limpieza, URL_CATEGORIAS, URL_PRODUCTOS, abrirAltaCategoria, abrirAltaProducto,
-  abrirEdicionCategoria, abrirEdicionProducto, anotar, buscarCategoria, buscarProducto, categoriaDeApi,
-  categoriaPorNombre, categoriasDeApi, cerrarSesion, eliminarCategoriaEnLista, eliminarProductoEnLista,
-  filaCategoria, filaProducto, guardarCategoria, guardarProducto, iniciarSesion, irACategorias, irAProductos,
-  limpiarBusquedaCategoria, llenarCategoria, llenarProducto, nombreQa, nombresDeCategorias, productoDeApi,
-  productoPorNombre, slugDe, tokenDe, uniq, vigilarErrores5xx,
-} from '../../../support/admin';
+  Limpieza, abrirAltaProducto, guardarProducto, iniciarSesion, llenarProducto, nombreQa, productoPorNombre,
+  uniq,
+} from '../support/admin';
 
 // HU-25 · RF25-EP-03: Registro con precio inválido
 // Caso de Jira: RF25-TC-03. Criterios: CA-25.3.

@@ -56,7 +56,14 @@ export async function enviarRegistro(page: Page): Promise<void> {
 export async function iniciarSesion(page: Page, email: string, password: string): Promise<void> {
   await page.locator('[data-test="email"]').fill(email);
   await page.locator('[data-test="password"]').fill(password);
+  const responsePromise = page.waitForResponse(
+    response => response.url().endsWith('/users/login') && response.request().method() === 'POST',
+  );
   await page.locator('[data-test="login-submit"]').click();
+  const response = await responsePromise;
+  if (!response.ok()) {
+    throw new Error(`Login failed: HTTP ${response.status()} ${await response.text()}`);
+  }
 }
 
 export async function registrarUsuario(page: Page, usuario: UsuarioRegistro): Promise<void> {
